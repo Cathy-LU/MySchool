@@ -1,0 +1,9 @@
+1、distribute by类似于分组，distribute by必须要写在sort by之前，
+2、sort by 局部排序
+3、order by 全局排序
+4、cluster by的功能就是distribute by和sort by相结合，且只能是降序，不能指定asc和desc；
+5、fields terminated by ',' ：  指定列的分隔符为“,”；
+6、distinct 去重
+7、stored as 指定表的存储方式，默认为TextFile；
+8、set hive.enforce.bucketing = true; 桶操作必须设置的属性，启用桶表；
+9、
