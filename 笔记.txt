@@ -1,0 +1,89 @@
+大作业要求（正式考试前通过邮箱提交）：
+自定义要爬取的网站：爬虫程序+结果+说明文档
+说明文档内容：
+1、爬取数据的目的、用途
+2、用什么工具（参考网站、自己的修改点）
+3、尽量不抄（技术上可抄，思路上不可以）
+
+wireshark
+
+先登录httpbin.org，设置获得相应的url
+401错误 ： 未通过认证的错误
+
+1、认证问题
+ 1）Basic Auth
+ 2)Digest Auth
+2、使用Proxy
+3、ajax
+
+
+一、信息解析的一般方法（3种）：
+1、完整解析信息的标记形式，再提取关键信息；
+2、不解析全文，直接搜索信息；
+3、适应性方法（推荐）
+
+二、解析方法
+1、针对无结构文本信息：利用正则表达式进行模式匹配
+2、针对半结构文本：XML、JSON、YAML
+3、有结构数据（二进制）
+
+三、正则表达式
+数字：\d 或 [0-9] +{n}表示几位
+匹配中文：- [\u4e00-\u9fa5]
+匹配双字节字符（含汉字）：- [^\x00-\xff]
+匹配空白行：- \n\s*\r
+\s 空格  \, 逗号  
+
+汉字转拼音或拼音转汉字：pypinyin
+
+一、scrapy framework
+1、“5+2”结构
+2、3条数据流
+二、初试scrapy
+1、新建scrapy project
+conda activate myscrapy
+scrapy startproject xxx
+
+2、新建spider
+scrapy genspider
+3、运行spider
+scrapy crand quotespider
+4、定义parse()
+  提取数据
+ 1）测试如何parse
+     scrapy shell ...
+ 2）正式写spider
+5、测试
+6、follow links
+
+
+一、scrapy项目构建思路
+scrapy startproject xxx
+1、写items.py  出口定制
+2、写spider    入口定制及结果解析
+3、写pipelinespy 结果再加工（存文件、入数据库）
+4、检查/修改 settings.py
+5、执行
+
+二、scrapy-redis 项目建立过程
+1、scrapy startproject xxx
+2、修改settings.py，使之具备scrapy-redis特性
+3、编写scrapy-redis项目spider  scrapy genspider dmo2
+
+一、scrapy-redis
+1、分布式爬虫的架构
+2、实践步骤：
+1）new scrapy-redis project
+2)settings.py 修改
+3）编写分布式spider
+scrapy genspider -t crawl xxxdomain
+4)运行scrapy crawl xxx
+
+
+
+涉及到HTML,可以通过正则、xpath、bs来解析，
+涉及到json数据，可以json解析,通过Python自带的列表和字典，也可通过jsonpath；
+
+
+
+
