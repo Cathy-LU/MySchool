@@ -1,0 +1,20 @@
+启动Hadoop
+start-dfs.sh
+start-yarn.sh
+mr-jobhistory-daemon.sh start historyserver
+
+运行eclipse程序
+创建文件目录：hdfs dfs -mkdir +目录名称
+本地创建文件：test.txt
+将本地文件放入新建的目录中：hdfs dfs -put test.txt /目录
+将运行好的jar包放入hadoop中：rz + jar包地址
+查看yarn jar：yarn jar + 包名
+执行：yarn jar 包名 运行方法（从上一条命令中可以看到）/文件地址 /输出文件地址
+查看运行结果：hdfs dfs - ls / 输出文件地址 （看输出文件名字）
+              hdfs dfs -cat +/输出文件地址/输出文件名
+
+
+关闭Hadoop
+mr-jobhistory-daemon.sh stop historyserver
+stop-yarn.sh
+stop-dfs.sh
