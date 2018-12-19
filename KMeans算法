@@ -1,0 +1,27 @@
+K-Means算法是无监督学习的聚类算法，没有样本输出。
+K-Means的主要优点有：
+1）原理比较简单，实现也是很容易，收敛速度快。
+2）聚类效果较优。
+3）算法的可解释度比较强。
+4）主要需要调参的参数仅仅是簇数k。
+
+K-Means的主要缺点有：
+1）K值的选取不好把握。
+2）不是凸的数据集比较难收敛。
+3）如果各隐含类别的数据不平衡，比如各隐含类别的数据量严重失衡，或者各隐含类别的方差不同，则聚类效果不佳。
+4）采用迭代方法，得到的结果只是局部最优。
+5）对噪音和异常点比较的敏感。
+
+导入KMeans库：from sklearn.cluster import KMeans 
+def __init__(self, n_clusters=8, init='k-means++', n_init=10, max_iter=300,tol=1e-4,precompute_distances='auto',verbose=0, random_state=None, copy_x=True, n_jobs=1):
+输入参数:
+n_clusters：要分成的簇数也是要生成的质心数,即k值，主要调参参数，默认为8
+init:初始化质心，类型可以是function 可以是array（random or ndarray），默认值：采用k-means++(一种生成初始质心的算法)
+max_iter：每次迭代的最大次数，默认300
+n_jobs: 使用进程的数量，与电脑的CPU有关，默认1
+输出参数：
+label_:每个样本对应的簇类别标签
+cluster_centers_：聚类中心，返回值array, [n_clusters, n_features]
+
+参考文档链接：https://www.cnblogs.com/wuchuanying/p/6218486.html
+             https://zhuanlan.zhihu.com/p/29847493
